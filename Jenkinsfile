@@ -10,7 +10,13 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker --version'
+                sh 'docker build -t salary-predictor .'
+            }
+        }
+
+        stage('Show Images') {
+            steps {
+                sh 'docker images'
             }
         }
     }
